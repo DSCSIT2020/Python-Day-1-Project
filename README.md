@@ -1,3 +1,3 @@
 # Python-Day-1-Project
 Mini Projects using basic stuffs
-![alt text](http://C:\Users\moni\Desktop\DSC/to/repo.png)
+![Alt text](relative/C:\Users\moni\Desktop\DSC/to/img.jpg?raw=true "Title")
