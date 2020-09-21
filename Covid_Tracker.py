@@ -6,7 +6,7 @@ import matplotlib.patches as mpatches
 from covid import *
 from matplotlib import pyplot as plt
 
-covid = Covid()
+covid = Covid(source="worldometers")
 case = []
 confirmed = []
 active = []
