@@ -1,6 +1,5 @@
-
 while True:
-    option = input("Enter add or subtract multiply divide quit :  ")
+    option = input("Enter add or subtract multiply divide quit :  ").lower()
     if option == 'quit':
         break
     elif option == 'add':
@@ -19,6 +18,4 @@ while True:
         number1 = float(input("Enter first number: "))
         number2 = float(input("Enter second number: "))
         print(number1 / number2)
-    else : 
-        print("Invalid Input")
 print("EXIT")
