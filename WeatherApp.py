@@ -7,13 +7,13 @@ import json
 
 root = Tk()
 root.title("Weather App")
-root.iconbitmap('disneyland.ico')
+# root.iconbitmap('disneyland.ico')
 root.geometry("600x200")
 root.configure(background="White")
 
 
 api_p1 = "https://api.weatherbit.io/v2.0/current?city="
-api_p2 = ",IN&key=" #Add your own key here
+api_p2 = ",IN&key=67dc8061c6a245c3a77152909202809" 
 
 def submit():
     try:
