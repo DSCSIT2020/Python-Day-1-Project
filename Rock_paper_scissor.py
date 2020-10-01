@@ -1,52 +1,74 @@
-#impost random module
 import random
 
-#game rule
-print("Game rule:\n\tRock vs Paper => Paper Win \n\tPaper vs Scissor => Scissor Win \n\tRock vs Scissor => Rock Win")
+lst = ['s', 'w', 'g']
 
-#For play again
-while True:  
-    print("\nChoices are: \n\t1.Rock \n\t2.paper \n\t3.Scissor")
+chance = 10
+no_of_chance = 0
+computer_point = 0
+human_point = 0
 
-    #Computer choice    
-    print("\nComputer's turn")
-    print("----------------------")
-    print("Computer has done secretly. Obviously You're not able to see it now")
-    computer_choice = random.randint(1,3)
-    if computer_choice == 1:
-        computer_choice_name = "Rock"
-    elif computer_choice == 2:
-        computer_choice_name = "Paper"
-    elif computer_choice == 3:
-        computer_choice_name = "Scissor"
+print(" \t \t \t \t Snake,Water,Gun Game\n")
+print("s for snake \nw for water \ng for gun \n")
 
-    # Print user choice
-    print("\nYour turn")
-    print("--------------")
-    user_choice = int(input("Enter your choice: "))
-    while user_choice > 3 or user_choice < 1: 
-        user_choice = int(input("enter valid input: ")) 
-    if user_choice == 1:
-        user_choice_name = "Rock"
-    elif user_choice == 2:
-        user_choice_name = "Paper"
+# making the game in while
+while no_of_chance < chance:
+    _input = input("Snake,Water,Gun:")
+    _random = random.choice(lst)
+
+    if _input == _random:
+        print("Tie Both 0 point to each\n")
+
+    # if user enter s
+    elif _input == "s" and _random == "g":
+        computer_point = computer_point + 1
+        print(f"your guess {_input} and computer guess is {_random}")
+        print("computer wins 1 point \n")
+
+    elif _input == "s" and _random == "w":
+        human_point = human_point + 1
+        print(f"your guess {_input} and computer guess is {_random}")
+        print("Human wins 1 point \n")
+
+    # if user enter w
+    elif _input == "w" and _random == "s":
+        computer_point = computer_point + 1
+        print(f"your guess {_input} and computer guess is {_random}")
+        print("computer wins 1 point \n")
+
+    elif _input == "w" and _random == "g":
+        human_point = human_point + 1
+        print(f"your guess {_input} and computer guess is {_random}")
+        print("Human wins 1 point \n")
+
+    # if user enter g
+    elif _input == "g" and _random == "s":
+        human_point = human_point + 1
+        print(f"your guess {_input} and computer guess is {_random}")
+        print("Human wins 1 point \n")
+
+    elif _input == "g" and _random == "w":
+        computer_point = computer_point + 1
+        print(f"your guess {_input} and computer guess is {_random}")
+        print("computer wins 1 point \n")
+
+    # if user enter anything else
     else:
-        user_choice_name = "Scissor"
+        print("you enter wrong input\n")
 
+    print(f"computer_point is {computer_point} and your point is {human_point} ")
 
-    print("\n" + computer_choice_name + " vs " + user_choice_name)
+    no_of_chance = no_of_chance + 1
+    print(f"{chance - no_of_chance} is left out of {chance}\n")
 
-    if computer_choice_name == user_choice_name:
-        print("\nDraw")
-    elif ((computer_choice_name == 1 and user_choice_name == 2) or (computer_choice_name == 2 and user_choice_name == 3) or (computer_choice_name == 3 and user_choice_name == 1)):
-        print(user_choice_name + " wins. You Win")
-    else:
-        print(computer_choice_name + " wins. Computer win")
+print("Game over")
 
-        print("\nDo you want to continue (Y/N)")
-        answer=input()
+if computer_point > human_point:
+    print("Computer wins and you loose")
 
-        if (answer == "N" or answer == "n"):
-            break
+elif computer_point < human_point:
+    print("you win and computer loose")
 
-print("Thanks for playing")
+elif computer_point == human_point:
+    print("No one win, no one loose")
+
+print(f"your point is {human_point} and computer point is {computer_point}")
